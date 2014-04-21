@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "loopMe",
+  "icons": { "128": "loop.png" },
+  "description": "Loop button for YouTube.",
+  "version": "0.0.1",
+  "background": { 
+  	"scripts": ["background.js"]
+  },
+  "content_scripts": [
+    { "matches": ["http://www.youtube.com/*","https://www.youtube.com/*"], "js": ["content.js"] }
+  ],
+  "permissions": [
+    "tabs","http://www.youtube.com/*","https://www.youtube.com/*"
+  ],
+  "page_action": {
+    "default_icon": "loopoff.png",
+    "default_title": "loopMe"
+  },
+  "web_accessible_resources": ["modplayer.js"]
+}
